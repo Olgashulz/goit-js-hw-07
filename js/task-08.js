@@ -18,7 +18,7 @@ function runCreateBoxes() {
 function createBoxes(amount) {
     for (let i = 1; i <= amount; i += 1) {
         let color = (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase(); 
-        const boxEl = `<div class = "box" style="background-color: #${color}; width: ${size}px; height:${size}px;"></div>`
+        const boxEl = `<div class = "box" style="background-color: #${color}; width: ${size}px; margin: 10px; height:${size}px;"></div>`
         boxContainer.insertAdjacentHTML('beforeend', boxEl);
         size += 10;
     }
