@@ -6,11 +6,7 @@ const onDestroyBtn = document.querySelector('[data-action="destroy"]');
 
 onCreateBtn.addEventListener('click', runCreateBoxes);
 onDestroyBtn.addEventListener('click', destroyBoxes);
-inputEl.addEventListener('input', () => {
-    // console.log(inputEl.value);
-    return inputEl.value;
-})
- 
+
 function runCreateBoxes() {
     createBoxes(inputEl.value);
 }
@@ -22,16 +18,23 @@ function createBoxes(amount) {
         boxContainer.insertAdjacentHTML('beforeend', boxEl);
         size += 10;
     }
+    size = 30;
+    return size;
 }
 
 function destroyBoxes() {
-    var element = document.getElementById('boxes');
-    size = 30;
-    inputEl.value = '';
-    while (element.firstChild) {
-        element.removeChild(element.firstChild);
-    }
+        boxContainer.innerHTML = '';
+        inputEl.value = '';    
 }
+
+// function destroyBoxes() {
+//     var element = document.getElementById('boxes');
+//     size = 30;
+//     inputEl.value = '';
+//     while (element.firstChild) {
+//         element.removeChild(element.firstChild);
+//     }
+// }
 
 
 
